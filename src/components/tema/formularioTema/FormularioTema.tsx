@@ -1,14 +1,13 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
-import { atualizar, buscar, cadastrar } from '../../../service/Service';
-import { toastAlerta } from '../../../util/toastAlerta';
+import { atualizar, buscar, cadastrar } from '../../../services/Service';
 
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
 
@@ -16,7 +15,7 @@ function FormularioTema() {
   const token = usuario.token;
 
   async function buscarPorId(id: string) {
-    await buscar(`/temas/${id}`, setTema, {
+    await buscar(`/tema/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
@@ -43,41 +42,41 @@ function FormularioTema() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/temas`, tema, setTema, {
+        await atualizar(`/tema`, tema, setTema, {
           headers: {
             'Authorization': token
           }
         })
 
-        toastAlerta('Tema atualizado com sucesso', 'sucesso')
+        alert('Tema atualizado com sucesso')
         retornar()
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
+          alert('O token expirou, favor logar novamente')
           handleLogout()
         } else {
-          toastAlerta('Erro ao atualizar o Tema', 'erro')
+          alert('Erro ao atualizar o Tema')
         }
 
       }
 
     } else {
       try {
-        await cadastrar(`/temas`, tema, setTema, {
+        await cadastrar(`/tema`, tema, setTema, {
           headers: {
             'Authorization': token
           }
         })
 
-        toastAlerta('Tema cadastrado com sucesso', 'sucesso')
+        alert('Tema cadastrado com sucesso')
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
+          alert('O token expirou, favor logar novamente')
           handleLogout()
         } else {
-          toastAlerta('Erro ao cadastrado o Tema', 'erro')
+          alert('Erro ao cadastrar Tema')
         }
       }
     }
@@ -91,7 +90,7 @@ function FormularioTema() {
 
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Você precisa estar logado', 'info');
+      alert('Você precisa estar logado');
       navigate('/login');
     }
   }, [token]);
@@ -111,6 +110,15 @@ function FormularioTema() {
             name='descricao'
             className="border-2 border-slate-700 rounded p-2"
             value={tema.descricao}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+          <label htmlFor="tipo">Tipo do tema</label>
+          <input
+            type="text"
+            placeholder="Tipo"
+            name='tipo'
+            className="border-2 border-slate-700 rounded p-2"
+            value={tema.tipo}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
