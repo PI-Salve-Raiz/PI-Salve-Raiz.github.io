@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
-import { buscar, atualizar, cadastrar } from '../../../service/Service';
+import { buscar, atualizar, cadastrar } from '../../../services/Service';
 import { toastAlerta } from '../../../util/toastAlerta';
 
 
@@ -20,6 +20,7 @@ function FormularioPostagem() {
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: '',
+    tipo: '',
   });
 
   const [postagem, setPostagem] = useState<Postagem>({
@@ -40,7 +41,7 @@ function FormularioPostagem() {
   }
 
   async function buscarTemaPorId(id: string) {
-    await buscar(`/temas/${id}`, setTema, {
+    await buscar(`/tema/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
@@ -48,7 +49,7 @@ function FormularioPostagem() {
   }
 
   async function buscarTemas() {
-    await buscar('/temas', setTemas, {
+    await buscar('/tema', setTemas, {
       headers: {
         Authorization: token,
       },
