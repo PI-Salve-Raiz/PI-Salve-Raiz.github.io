@@ -30,10 +30,11 @@ function FormularioPostagem() {
     data: '',
     tema: null,
     usuario: null,
+    foto:''
   });
 
   async function buscarPostagemPorId(id: string) {
-    await buscar(`/postagens/${id}`, setPostagem, {
+    await buscar(`/postagem/${id}`, setPostagem, {
       headers: {
         Authorization: token,
       },
@@ -99,7 +100,7 @@ function FormularioPostagem() {
 
     if (id != undefined) {
       try {
-        await atualizar(`/postagens`, postagem, setPostagem, {
+        await atualizar(`/postagem`, postagem, setPostagem, {
           headers: {
             Authorization: token,
           },
@@ -116,7 +117,7 @@ function FormularioPostagem() {
       }
     } else {
       try {
-        await cadastrar(`/postagens`, postagem, setPostagem, {
+        await cadastrar(`/postagem`, postagem, setPostagem, {
           headers: {
             Authorization: token,
           },
@@ -162,6 +163,18 @@ function FormularioPostagem() {
             type="text"
             placeholder="Texto"
             name="texto"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="foto">Foto da postagem</label>
+          <input
+            value={postagem.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="text"
+            placeholder="Foto"
+            name="foto"
             required
             className="border-2 border-slate-700 rounded p-2"
           />

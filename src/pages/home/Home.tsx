@@ -1,4 +1,6 @@
 import homeLogo from '../../assets/home2.png'
+import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
 
 function Home() {
@@ -11,7 +13,7 @@ function Home() {
               <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
 
               <div className="flex justify-around gap-4">
-
+              <ModalPostagem />
                 <button className='rounded bg-white text-blue-700 py-2 px-4'>Ver postagens</button>
               </div>
             </div>
@@ -22,7 +24,7 @@ function Home() {
             </div>
           </div>
         </div>
-
+        <ListaPostagens />
       </>
     );
 }

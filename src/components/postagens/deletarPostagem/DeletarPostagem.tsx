@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Postagem from '../../../models/Postagem'
-import { buscar, deletar } from '../../../service/Service'
+import { buscar, deletar } from '../../../services/Service'
 import { toastAlerta } from '../../../util/toastAlerta'
 
 function DeletarPostagem() {
@@ -17,7 +17,7 @@ function DeletarPostagem() {
 
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/postagens/${id}`, setPostagem, {
+      await buscar(`/postagem/${id}`, setPostagem, {
         headers: {
           'Authorization': token
         }
@@ -49,7 +49,7 @@ function DeletarPostagem() {
 
   async function deletarPostagem() {
     try {
-      await deletar(`/postagens/${id}`, {
+      await deletar(`/postagem/${id}`, {
         headers: {
           'Authorization': token
         }
