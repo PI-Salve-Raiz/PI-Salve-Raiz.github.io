@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
+import Carrossel from '../../components/swiper/Carrossel';
 
 function Login() {
   const navigate = useNavigate();
@@ -84,7 +85,9 @@ function login(e: ChangeEvent<HTMLFormElement>) {
             </Link>
           </p>
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
+        <div>
+        <Carrossel/>
+        </div>
       </div>
     </>
   );
