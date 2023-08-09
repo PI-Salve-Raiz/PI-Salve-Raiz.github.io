@@ -21,7 +21,7 @@ function App() {
     <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <div className='min-h-[80vh]'>
+          <div className='min-h-[60vh]'>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />

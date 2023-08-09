@@ -16,8 +16,9 @@ function Carrossel() {
 
     // eslint-disable-next-line no-var
     var items = [
-        { img: "https://www.riotgames.com/darkroom/1440/b540da2b9afe5ec83e842a2d84f6dbb1:e95535ecd35e48592908762c9353926a/arcane-final-poster-16x9-no-text-no-border.jpg" },
-        { img: "https://cdn1.dotesports.com/wp-content/uploads/sites/3/2021/09/26143317/LUkXhMag.jpeg" },
+        { img: "https://media.discordapp.net/attachments/1120709412110205028/1138951219226878042/cheerful-diverse-people-together-park.jpg?width=695&height=498" },
+        { img: "https://media.discordapp.net/attachments/1120709412110205028/1138951069993533460/diverse-hands-touching-white-paper-mockup-pink-wallpaper.jpg?width=885&height=498" },
+        { img: "https://cdn.discordapp.com/attachments/1120709412110205028/1138950870810230814/salveraizlogin.jpg" },
     ]
 
     return (
