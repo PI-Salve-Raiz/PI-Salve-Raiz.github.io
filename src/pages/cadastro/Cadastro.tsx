@@ -75,6 +75,8 @@ function Cadastro() {
         <Carrossel/>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
           <h2 className='text-slate-900 text-4xl'>Cadastre-se</h2>
+
+        <h2 className='text-slate-900 text-3xl'>Crie uma conta gratuitamente</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome Completo</label>
             <input
