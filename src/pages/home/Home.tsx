@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import homeLogo from '../../assets/home2.png'
 import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
@@ -14,7 +15,7 @@ function Home() {
 
               <div className="flex justify-around gap-4">
               <ModalPostagem />
-                <button className='rounded bg-white text-blue-700 py-2 px-4'>Ver postagens</button>
+                <button className='border rounded py-2 px-4 hover:bg-white hover:text-indigo-800'><Link to='/postagens' className='hover:underline'>Ver postagens</Link></button>
               </div>
             </div>
 
