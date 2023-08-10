@@ -51,7 +51,7 @@ function ListaPostagens() {
           wrapperClass="dna-wrapper mx-auto"
         />
       )}
-      <div className='bg-gradient-to-r from-rose-400 to-orange-300 flex flex-col justify-center gap-4 pl-72 pb-4'>
+      <div className='bg-gradient-to-r from-rose-400 to-orange-300'>
         {postagens.map((postagem) => (
           <CardPostagem key={postagem.id} post={postagem} />
         ))}
