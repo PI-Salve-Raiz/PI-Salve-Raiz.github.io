@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import homeLogo from '../../assets/home2.png'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+import './Home.css'
 
 function Home() {
     return (
@@ -8,12 +9,12 @@ function Home() {
         <div className="bg-gradient-to-r from-rose-400 to-orange-300 flex justify-center">
           <div className='container grid grid-cols-2 text-white'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
-              <h2 className='text-5xl font-bold  text-white'>Seja bem vinde!</h2>
-              <p className='text-xl  text-white'>Construindo pontes de apoio e oportunidade dentro da nossa própria comunidade.</p>
+              <h2 className='text-6xl font-bold text-white fonteTitulo'>Seja bem vinde!</h2>
+              <p className='text-2xl  text-white fonteParagrafo text-center'>Construindo pontes de apoio e oportunidade dentro da nossa própria comunidade.</p>
 
-              <div className="flex justify-around gap-4">
+              <div className="flex justify-around gap-4 mt-2">
               <ModalPostagem />
-                <button className='border rounded border-white py-2 px-4 text-white hover:border-white hover:bg-white hover:text-indigo-800'><Link to='/postagens' className='hover:underline'>Ver postagens</Link></button>
+                <button className='rounded py-2 px-4 text-white bg-zinc-950 hover:border-white hover:bg-neutral-100 hover:text-black'><Link to='/postagens' className='hover:underline'>Ver postagens</Link></button>
               </div>
             </div>
 
