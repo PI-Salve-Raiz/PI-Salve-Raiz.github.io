@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
+
+import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
+import Switch from 'react-switch'
+
+
 
 
 function Navbar() {
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
     const { usuario, handleLogout } = useContext(AuthContext)
 
@@ -13,7 +17,7 @@ function Navbar() {
         alert('Usuário deslogado com sucesso')
         navigate('/login')
     }
-
+    
     let navbarComponent
 
     if(usuario.token !== "") {
@@ -28,7 +32,19 @@ function Navbar() {
               <Link to='/cadastroTema' className='hover:underline'>Cadastrar tema</Link>
               <Link to='/perfil' className='hover:underline'>Perfil</Link>
               <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+              
             </div>
+            <Switch
+              onChange={() => { }}
+              checked
+              height={15}
+              width={40}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              handleDiameter={20}
+              offColor="#fff"
+              onColor="#232323"
+            />
           </div>
         </div>
       )
