@@ -104,7 +104,7 @@ function Footer() {
           <div>
             <div className="mb-6 md:mb-0">
               <div className="grid gap-4 grid-cols-3 ml-15">
-                <div className="row-span-6 ">
+                <div className="">
                   <h5 className="mb-2 font-medium uppercase">
                     {' '}
                     Conectando Pessoas e Serviços
@@ -129,7 +129,7 @@ function Footer() {
                   </ul>
                 </div>
 
-                <div className=" ">
+                <div>
                   <h5 className="mb-2 font-medium uppercase">
                     {' '}
                     Sobre o Salve Raís
