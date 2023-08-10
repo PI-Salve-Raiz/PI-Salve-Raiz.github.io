@@ -43,7 +43,7 @@ function Login() {
         </div>
 
         <div
-          className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+          className="bg-orange-300 w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
       flex items-center justify-center"
         >
           <div className="w-full h-100">
@@ -98,7 +98,7 @@ function Login() {
 
               <button
                 type="submit"
-                className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg
+                className="w-full block text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none font-semibold rounded-lg
             px-4 py-3 mt-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 {isLoading ? (
@@ -115,12 +115,12 @@ function Login() {
               </button>
             </form>
 
-            <hr className="my-6 border-gray-300 w-full"></hr>
+            <hr className="my-6 border-slate-900 w-full"></hr>
 
             <p className="mt-5">
               {' '}
               Ainda não tem uma conta?{' '}
-              <Link to="/cadastro" className="text-indigo-800 hover:underline">
+              <Link to="/cadastro" className="text-indigo-600 hover:underline hover:text-indigo-700">
                 Cadastre-se
               </Link>
             </p>

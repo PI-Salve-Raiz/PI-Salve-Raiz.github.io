@@ -16,9 +16,9 @@ function Carrossel() {
 
     // eslint-disable-next-line no-var
     var items = [
-        { img: "https://images.unsplash.com/photo-1599340695880-cb4075c7b50f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" },
-        { img: "https://images.unsplash.com/photo-1599340695478-ff96329c0ae1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" },
-        { img: "https://images.unsplash.com/photo-1524944240950-f674e8790bf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80" },
+        { img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/fb76ab86778641.62a2693eeaaee.jpg" },
+        { img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e4380116982177.62a26b61941fc.png" },
+        { img: "https://cdn.dribbble.com/users/692156/screenshots/2535440/media/6895c695e0316be1f531e4e1f1ff9398.png" },
     ]
 
     return (
