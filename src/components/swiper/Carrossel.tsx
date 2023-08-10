@@ -16,9 +16,9 @@ function Carrossel() {
 
     // eslint-disable-next-line no-var
     var items = [
-        { img: "https://media.discordapp.net/attachments/1120709412110205028/1138951219226878042/cheerful-diverse-people-together-park.jpg?width=695&height=498" },
-        { img: "https://media.discordapp.net/attachments/1120709412110205028/1138951069993533460/diverse-hands-touching-white-paper-mockup-pink-wallpaper.jpg?width=885&height=498" },
-        { img: "https://cdn.discordapp.com/attachments/1120709412110205028/1138950870810230814/salveraizlogin.jpg" },
+        { img: "https://images.unsplash.com/photo-1599340695880-cb4075c7b50f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" },
+        { img: "https://images.unsplash.com/photo-1599340695478-ff96329c0ae1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" },
+        { img: "https://images.unsplash.com/photo-1524944240950-f674e8790bf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80" },
     ]
 
     return (

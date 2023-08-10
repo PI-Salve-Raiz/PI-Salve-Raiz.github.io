@@ -5,15 +5,15 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 function Home() {
     return (
         <>
-        <div className="bg-[#DEDEDC] flex justify-center">
+        <div className="bg-gradient-to-r from-rose-400 to-orange-300 flex justify-center">
           <div className='container grid grid-cols-2 text-white'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
-              <h2 className='text-5xl font-bold text-[#E19A2B]'>Seja bem vinde!</h2>
-              <p className='text-xl text-[#E19A2B]'>Expresse aqui seus pensamentos e opniões</p>
+              <h2 className='text-5xl font-bold  text-white'>Seja bem vinde!</h2>
+              <p className='text-xl  text-white'>Construindo pontes de apoio e oportunidade dentro da nossa própria comunidade.</p>
 
               <div className="flex justify-around gap-4">
               <ModalPostagem />
-                <button className='border rounded border-[#E19A2B] py-2 px-4 text-[#E19A2B] hover:border-white hover:bg-white hover:text-indigo-800'><Link to='/postagens' className='hover:underline'>Ver postagens</Link></button>
+                <button className='border rounded border-white py-2 px-4 text-white hover:border-white hover:bg-white hover:text-indigo-800'><Link to='/postagens' className='hover:underline'>Ver postagens</Link></button>
               </div>
             </div>
 

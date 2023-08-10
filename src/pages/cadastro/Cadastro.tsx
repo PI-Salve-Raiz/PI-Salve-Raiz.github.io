@@ -71,12 +71,11 @@ function Cadastro() {
   return (
     <>
     
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
         <Carrossel/>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-4xl'>Cadastre-se</h2>
-
-        <h2 className='text-slate-900 text-3xl'>Crie uma conta gratuitamente</h2>
+        <h1 className="text-xl md:text-3xl font-bold leading-tight mt-4">Cadastre-se</h1>
+        <h2 className='text-slate-900 text-2xl'>Crie uma conta gratuitamente</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome Completo</label>
             <input
@@ -84,7 +83,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required
               value={usuario.nome} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -96,7 +95,8 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Escolha seu nome de usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+              focus:bg-white focus:outline-none" required 
               value={usuario.usuario} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -108,7 +108,8 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Link da sua foto de perfil"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+              focus:bg-white focus:outline-none" required
               value={usuario.foto} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -120,7 +121,8 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+              focus:bg-white focus:outline-none" required
               value={usuario.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -132,7 +134,8 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirme a senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+              focus:bg-white focus:outline-none" required
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
@@ -141,7 +144,7 @@ function Cadastro() {
             <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={back}>
               Cancelar
             </button>
-            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2' type='submit'>
+            <button className='rounded text-white bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 w-1/2 py-2' type='submit'>
               Cadastrar
             </button>
           </div>
