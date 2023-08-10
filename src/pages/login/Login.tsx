@@ -1,12 +1,11 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import './Login.css';
-
 import { Link, useNavigate } from 'react-router-dom';
-
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 import Carrossel from '../../components/swiper/Carrossel';
+import '../home/Home.css'
 
 function Login() {
   const navigate = useNavigate();
@@ -38,7 +37,7 @@ function Login() {
   }
   return (
     <>
-      <section className="flex flex-col md:flex-row h-screen items-center">
+      <section className="flex flex-col md:flex-row h-screen items-center fonteTitulo">
         <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
           <Carrossel />
         </div>
@@ -54,7 +53,7 @@ function Login() {
 
             <form onSubmit={login}>
               <div>
-                <label className="block text-gray-700">Endereço de email</label>
+                <label className="block text-gray-700 mt-4">Endereço de email</label>
                 <input
                   type="email"
                   name="usuario"

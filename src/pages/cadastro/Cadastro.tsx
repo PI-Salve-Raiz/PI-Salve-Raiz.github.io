@@ -4,6 +4,7 @@ import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
 import Carrossel from '../../components/swiper/Carrossel'
+import '../home/Home.css'
 
 function Cadastro() {
 
@@ -71,7 +72,7 @@ function Cadastro() {
   return (
     <>
     
-      <div className=" grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold fonteTitulo">
         <Carrossel/>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
         <h1 className="text-xl md:text-3xl font-bold leading-tight mt-4">Cadastre-se</h1>
@@ -140,7 +141,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
           </div>
-          <div className="flex justify-around w-full gap-8">
+          <div className="flex justify-around w-full gap-8 mt-2">
             <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={back}>
               Cancelar
             </button>
