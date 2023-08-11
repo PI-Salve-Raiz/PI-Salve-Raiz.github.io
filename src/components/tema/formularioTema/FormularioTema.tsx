@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
+import '../../../pages/home/Home.css'
 
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);
@@ -24,68 +25,64 @@ function FormularioTema() {
 
   useEffect(() => {
     if (id !== undefined) {
-      buscarPorId(id)
+      buscarPorId(id);
     }
-  }, [id])
+  }, [id]);
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setTema({
       ...tema,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
 
-    console.log(JSON.stringify(tema))
+    console.log(JSON.stringify(tema));
   }
 
   async function gerarNovoTema(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
+    e.preventDefault();
 
     if (id !== undefined) {
       try {
         await atualizar(`/tema`, tema, setTema, {
           headers: {
-            'Authorization': token
-          }
-        })
+            Authorization: token,
+          },
+        });
 
-        alert('Tema atualizado com sucesso')
-        retornar()
-
+        alert('Tema atualizado com sucesso');
+        retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
+          alert('O token expirou, favor logar novamente');
+          handleLogout();
         } else {
-          alert('Erro ao atualizar o Tema')
+          alert('Erro ao atualizar o Tema');
         }
-
       }
-
     } else {
       try {
         await cadastrar(`/tema`, tema, setTema, {
           headers: {
-            'Authorization': token
-          }
-        })
+            Authorization: token,
+          },
+        });
 
-        alert('Tema cadastrado com sucesso')
-
+        alert('Tema cadastrado com sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
+          alert('O token expirou, favor logar novamente');
+          handleLogout();
         } else {
-          alert('Erro ao cadastrado o Tema')
+          alert('Erro ao cadastrado o Tema');
         }
       }
     }
 
-    retornar()
+    retornar();
   }
 
   function retornar() {
-    navigate("/temas")
+    navigate('/temas');
   }
 
   useEffect(() => {
@@ -96,41 +93,37 @@ function FormularioTema() {
   }, [token]);
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
-      </h1>
-
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do tema</label>
+    <div className="flex items-center justify-center bg-[#fbfbfb] fonteTitulo ">
+      <div className="grid w-90 grid-col-4 gap-4">
+        <h1 className="text-4xl text-center mt-8 font-bold">
+          {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
+        </h1>
+        <form className="w-2/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+          <label htmlFor="descricao" className='text-lg'>Descrição do tema</label>
           <input
             type="text"
+            name="descricao"
+            className="h-10 w-full rounded border p-2 text-sm"
             placeholder="Descrição"
-            name='descricao'
-            className="border-2 border-slate-700 rounded p-2"
             value={tema.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="tipo">Tipo do tema</label>
+
+          <label htmlFor="tipo" className='text-lg'>Tipo do tema</label>
           <input
             type="text"
+            name="tipo"
+            className="h-10 w-full rounded border p-2 text-sm"
             placeholder="Tipo"
-            name='tipo'
-            className="border-2 border-slate-700 rounded p-2"
             value={tema.tipo}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
-        </div>
-        <button
-          className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
-          type="submit"
-        >
-          {id === undefined ? 'Cadastrar' : 'Editar'}
-        </button>
-      </form>
+
+          <button className="rounded p-2 bg-[#FD5E57] text-gray-50 hover:bg-gradient-to-r hover:from-[#FD5E57] hover:to-[#FC477E]">
+            {id === undefined ? 'Cadastrar' : 'Editar'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
