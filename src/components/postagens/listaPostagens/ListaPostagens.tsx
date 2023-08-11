@@ -64,14 +64,16 @@ function ListaPostagens() {
         </div>
         <div className="col-span-4 lg:col-span-6">
         <div className="flex justify-between pb-1 border-b border-gray-300 mt-4">
-                <h1 className="text-3xl font-semibold">Feed</h1>
+                <h1 className="text-3xl font-semibold">Postagens</h1>
                 <ModalPostagem />
               </div>
         {postagens.map((postagem) => (
           <Feed key={postagem.id} post={postagem} />
         ))}
         </div>
+        
         <div className="col-span-4 lg:col-span-3">
+        <h3 className="mt-3 font-semibold">Notificações</h3>
           {postagens.map((postagem) => (
           <Trending key={postagem.id} post={postagem} />
           ))}
