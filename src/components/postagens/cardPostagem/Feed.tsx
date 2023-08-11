@@ -1,12 +1,39 @@
+import { useContext, useEffect, useState } from 'react';
+import { buscar } from '../../../services/Service';
 import { Link } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import '../../../pages/home/Home.css'
+import { toastAlerta } from '../../../util/toastAlerta';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 interface FeedProps {
   post: Postagem;
 }
 
 function Feed({ post }: FeedProps) {
+  const [postagens, setPostagens] = useState<Postagem[]>([]);
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const token = usuario.token;
+
+  async function buscarPostagens() {
+    try {
+      await buscar('/postagem', setPostagens, {
+        headers: {
+          Authorization: token,
+        },
+      });
+    } catch (error: any) {
+      if (error.toString().includes('403')) {
+        toastAlerta('O token expirou, favor logar novamente','info')
+        handleLogout()
+      }
+    }
+  }
+
+  useEffect(() => {
+    buscarPostagens();
+  }, [postagens.length]);
+
   return (
 
     <div className="flex flex-col flex-grow border-l border-r border-gray-300 fonteTitulo">
