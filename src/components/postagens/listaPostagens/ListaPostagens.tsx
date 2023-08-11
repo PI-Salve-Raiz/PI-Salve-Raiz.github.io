@@ -71,7 +71,11 @@ function ListaPostagens() {
           <Feed key={postagem.id} post={postagem} />
         ))}
         </div>
-        <div className="col-span-4 lg:col-span-3"><Trending /></div>
+        <div className="col-span-4 lg:col-span-3">
+          {postagens.map((postagem) => (
+          <Trending key={postagem.id} post={postagem} />
+          ))}
+        </div>
       </div>
       </div>
       </div>

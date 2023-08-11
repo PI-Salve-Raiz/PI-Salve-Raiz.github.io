@@ -3,7 +3,9 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import loginLogo from '../../assets/capaperfil.jpg';
+
 import { toastAlerta } from '../../util/toastAlerta';
+
 function Perfil() {
   const navigate = useNavigate();
 
