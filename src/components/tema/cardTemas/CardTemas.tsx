@@ -23,7 +23,7 @@ function CardTemas({ tema }: CardTemaProps) {
 
         >
           <button
-            className="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-rose-400 transition-all hover:bg-pink-500/10 active:bg-rose-400 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-blue-700 transition-all hover:bg-pink-500/10 active:bg-rose-400 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-dark="true"
           >

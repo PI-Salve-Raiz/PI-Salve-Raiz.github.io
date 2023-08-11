@@ -74,7 +74,7 @@ function FormularioTema() {
           toastAlerta('O token expirou, favor logar novamente','info');
           handleLogout();
         } else {
-          toastAlerta('Erro ao cadastrado o Tema','erro');
+          toastAlerta('Erro ao cadastrar o Tema','erro');
         }
       }
     }
@@ -97,10 +97,10 @@ function FormularioTema() {
     <div className="flex items-center justify-center bg-[#fbfbfb] fonteTitulo ">
       <div className="grid w-90 grid-col-4 gap-4">
         <h1 className="text-4xl text-center mt-8 font-bold">
-          {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
+          {id === undefined ? 'Cadastre um novo serviço' : 'Editar tema'}
         </h1>
         <form className="w-2/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-          <label htmlFor="descricao" className='text-lg'>Descrição do tema</label>
+          <label htmlFor="descricao" className='text-lg'>Descrição do serviço</label>
           <input
             type="text"
             name="descricao"
@@ -110,7 +110,7 @@ function FormularioTema() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
 
-          <label htmlFor="tipo" className='text-lg'>Tipo do tema</label>
+          <label htmlFor="tipo" className='text-lg'>Tipo de serviço</label>
           <input
             type="text"
             name="tipo"
