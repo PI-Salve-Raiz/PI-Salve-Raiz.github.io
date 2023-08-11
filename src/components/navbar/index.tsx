@@ -1,14 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { Container } from '../temasInterface/styles';
 
 
-const Navbar = () =>{
-    return(
-        <Container>
-
-        </Container>
-    );
+function changeTheme() {
+    document.body.classList.toggle('dark-theme')
 }
 
-export default Navbar
+export default changeTheme

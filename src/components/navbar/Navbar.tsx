@@ -2,8 +2,9 @@
 import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
-import Switch from 'react-switch'
+
 import './Navbar.css'
+
 
 function Navbar() {
   const navigate = useNavigate()
@@ -30,17 +31,7 @@ function Navbar() {
               <Link to='/cadastroTema' className='hover:underline justify-self-end'>Cadastrar tema</Link>
               <Link to='/perfil' className='hover:underline justify-self-end'>Perfil</Link>
               <Link to='' onClick={logout} className='hover:underline justify-self-end'>Sair</Link>
-              <Switch
-              onChange={() => { }}
-              checked
-              height={15}
-              width={40}
-              checkedIcon={false}
-              uncheckedIcon={false}
-              handleDiameter={20}
-              offColor="#fff"
-              onColor="#232323"
-            />
+              
             </div>
             
           </div>
@@ -56,3 +47,5 @@ function Navbar() {
 }
 
 export default Navbar
+
+
