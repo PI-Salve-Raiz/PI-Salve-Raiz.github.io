@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import '../../../pages/home/Home.css'
 
@@ -21,14 +22,14 @@ function Feed({ post }: FeedProps) {
                   <p className="mt-1">
                     {post.texto}
                   </p>
-                  <div className="flex justify-between mt-4 -mb-4">
-                    <button className="text-sm font-semibold hover:underline">Curtir</button>
-                    <button className="ml-2 text-sm font-semibold hover:underline">
-                      Comentar
-                    </button>
-                    <button className="ml-2 text-sm font-semibold hover:underline">
-                      Compartilhar
-                    </button>
+                  <div className="flex justify-around gap-11 mt-10 -mb-4">
+                  <Link to={`/editarPostagem/${post.id}`} className='text-sm font-semibold hover:underline'>
+                    <button>Editar</button>
+                  </Link>
+
+                  <Link to={`/deletarPostagem/${post.id}`} className='ml-2 text-sm font-semibold hover:underline mr-20'>
+                    <button>Deletar</button>
+                  </Link>
                   </div>
                 </div>
               </div>
