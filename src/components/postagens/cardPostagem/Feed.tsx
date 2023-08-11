@@ -9,7 +9,7 @@ function Feed({ post }: FeedProps) {
   return (
 
     <div className="flex flex-col flex-grow border-l border-r border-gray-300 fonteTitulo">
-              <div className="flex w-full p-8 border-b border-gray-300">
+              <div className="flex w-full p-10 border-b border-gray-300 bg-slate-100">
                 <span className="flex-shrink-0 w-12 h-12 bg-gray-400 rounded-full"></span>
                 <div className="flex flex-col flex-grow ml-4">
                   <div className="flex">

@@ -7,7 +7,7 @@ import { atualizar, buscar, cadastrar } from '../../../services/Service';
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);
 
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
 
@@ -76,7 +76,7 @@ function FormularioTema() {
           alert('O token expirou, favor logar novamente')
           handleLogout()
         } else {
-          alert('Erro ao cadastrar Tema')
+          alert('Erro ao cadastrado o Tema')
         }
       }
     }
@@ -112,6 +112,8 @@ function FormularioTema() {
             value={tema.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
+        </div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="tipo">Tipo do tema</label>
           <input
             type="text"
