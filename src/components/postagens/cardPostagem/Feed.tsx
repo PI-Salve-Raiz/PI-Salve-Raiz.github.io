@@ -24,11 +24,11 @@ function Feed({ post }: FeedProps) {
                   </p>
                   <div className="flex justify-around gap-11 mt-10 -mb-4">
                   <Link to={`/editarPostagem/${post.id}`} className='text-sm font-semibold hover:underline'>
-                    <button>Editar</button>
+                    <button className='rounded bg-white text-blue-700 py-2 px-4'>Editar</button>
                   </Link>
 
                   <Link to={`/deletarPostagem/${post.id}`} className='ml-2 text-sm font-semibold hover:underline mr-20'>
-                    <button>Deletar</button>
+                    <button className='rounded bg-white text-red-700 py-2 px-4'>Deletar</button>
                   </Link>
                   </div>
                 </div>
