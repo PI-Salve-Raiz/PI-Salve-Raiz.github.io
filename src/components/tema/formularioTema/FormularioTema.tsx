@@ -120,7 +120,17 @@ function FormularioTema() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
 
-          <button className="rounded p-2 bg-[#FD5E57] text-gray-50 hover:bg-gradient-to-r hover:from-[#FD5E57] hover:to-[#FC477E]">
+          <label htmlFor="foto" className='text-lg'>Foto</label>
+          <input
+            type="text"
+            name="foto"
+            className="h-10 w-full rounded border p-2 text-sm"
+            placeholder="Link da Foto"
+            value={tema.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+
+          <button className="mb-5 rounded p-2 bg-[#FD5E57] text-gray-50 hover:bg-gradient-to-r hover:from-[#FD5E57] hover:to-[#FC477E]">
             {id === undefined ? 'Cadastrar' : 'Editar'}
           </button>
         </form>
