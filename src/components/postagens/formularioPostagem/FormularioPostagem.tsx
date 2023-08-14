@@ -21,6 +21,7 @@ function FormularioPostagem() {
     id: 0,
     descricao: '',
     tipo: '',
+    foto: '',
   });
 
   const [postagem, setPostagem] = useState<Postagem>({
