@@ -4,11 +4,11 @@ import '../../pages/home/Home.css'
 
 
 function Footer() {
-  const { usuario, handleLogout } = useContext(AuthContext);
+  const { usuario,  } = useContext(AuthContext);
 
   let footerComponent;
 
-  const data = new Date().getFullYear();
+  
 
   if (usuario.token !== '') {
     footerComponent = (

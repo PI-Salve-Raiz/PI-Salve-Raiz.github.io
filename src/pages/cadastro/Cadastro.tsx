@@ -84,7 +84,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
-              className="w-96 h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required
+              className="w-96 h-10 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autoFocus required
               value={usuario.nome} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
